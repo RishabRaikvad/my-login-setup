@@ -10,6 +10,7 @@ class FirebaseAuthService {
     final doc = await _firestore.collection("users").doc(uid).get();
     if (!doc.exists) return false;
     return doc.data()?['isProfileCompleted'] ?? false;
+
   }
 
   Future<void> createUser(UserModel user) async {
